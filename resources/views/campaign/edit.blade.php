@@ -42,7 +42,7 @@
         </span>
 
  …
-[14:42, 13/05/2026] Natasya Helmalia: @extends('layout.app')
+@extends('layout.app')
 
 @section('content')
 

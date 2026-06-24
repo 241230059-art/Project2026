@@ -21,6 +21,11 @@
             Profil
         </a>
 
+        <a href="{{ route('documentation.index') }}"
+           class="text-gray-600 hover:text-pink-500 transition">
+            Dokumentasi
+        </a>
+
         <a href="{{ route('kontak') }}"
            class="text-gray-600 hover:text-pink-500 transition">
             Kontak

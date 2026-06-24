@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CampaignController;
 use App\Http\Controllers\DonationController;
+use App\Http\Controllers\DocumentationFileController;
+use App\Http\Controllers\FeedController;
 
 Route::get('/', [DonationController::class, 'index'])
     ->name('home');
@@ -23,3 +26,10 @@ Route::view('/kontak', 'kontak.index')
 
 Route::view('/terima-kasih', 'donasi.terimakasih')
     ->name('terimakasih');
+
+Route::resource('campaign', CampaignController::class);
+Route::get('/feeds', [FeedController::class, 'index'])->name('feeds.index');
+
+Route::get('/dokumentasi', [DocumentationFileController::class, 'index'])->name('documentation.index');
+Route::post('/dokumentasi', [DocumentationFileController::class, 'store'])->name('documentation.store');
+Route::get('/dokumentasi/download/{id}', [DocumentationFileController::class, 'download'])->name('documentation.download');
